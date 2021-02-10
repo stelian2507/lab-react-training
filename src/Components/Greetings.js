@@ -1,26 +1,31 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Greetings = (props) => {
-    return ( 
-        <div> {lang(props.lang)} {props.name }
+const greetings = (props) => {
+  let greet = '';
+  const divStyle = {
+    display: 'flex',
+    border: '1px solid',
+    margin: '1%',
+    padding: '1%',
+  };
+  if (props.lang === 'de') {
+    greet = 'Hallo';
+  }
 
-        </div>
-    );
+  if (props.lang === 'fr') {
+    greet = 'Bonjour';
+  }
+
+  return (
+    <div style={divStyle}>
+      <h2>
+        {greet} {props.children}
+      </h2>
+    </div>
+  );
 };
 
-function lang(lang) {
-    if (lang === "de") {
-        return "Hallo"
-    }
-    else if (lang === "es") {
-        return "Hola"
-    }
-    else if (lang === "en") {
-        return "Hi"
-    }
-    else if (lang === "fr") {
-        return "Bonjour"
-    }
-}
+greetings.propTypes = {};
 
-export default Greetings;
+export default greetings;

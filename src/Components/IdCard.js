@@ -1,19 +1,27 @@
 import React from 'react';
+// import moment from 'moment';
 
-const IdCard = (props) => {
+function IdCard(props) {
   return (
-    <div>
-   <div>
-   <img src = {props.img} alt="idpic"/>
-   </div>
-      
-      <div>First Name: {props.firstName}</div>
-      <div>Last Name: {props.lastName}</div>
-      <div>Gender: {props.gender}</div>
-      <div>Birth: {props.birth}</div>
-   
+    <div className="idCard-box">
+      <img src={props.picture} alt=""></img>
+      <div>
+        <p>
+          <b>First Name</b>: {props.firstName}
+        </p>
+        <p>
+          <b>Last Name</b>: {props.lastName}
+        </p>
+        <p>
+          <b>Gender</b>: {props.gender}
+        </p>
+        <p>
+          <b>Height</b>: {props.height}
+        </p>
+        <p>{/* <b>Birthday</b>: {moment(props.birth).format('LLLL')} */}</p>
+      </div>
     </div>
   );
-};
+}
 
 export default IdCard;
